@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #191919;
+  --color-fg: #ffffff;
+  --color-red: #ff0000;
+  --color-ab: #17171c;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 340px;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  overflow-y: auto;
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(24px);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 4px;
+}
