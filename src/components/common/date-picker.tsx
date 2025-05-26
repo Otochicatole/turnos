@@ -75,10 +75,18 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
         time: selectedTime,
       };
 
+      const token = process.env.NEXT_PUBLIC_API_TOKKEN;
+
+      if (!token) {
+        console.error("API_TOKKEN no está definido");
+        return;
+      }
+
       try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/turnos`, {
           method: "POST",
           headers: {
+            Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ data: turno }),
