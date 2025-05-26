@@ -1,0 +1,170 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    color: black;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.subtitle {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 3.75rem;
+    padding: 1.5rem;
+}
+
+.label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+.input {
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+
+.inputMarginTop {
+    margin-top: 2.5rem;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.backgroundShapes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    background-color: rgba(61, 189, 148, 0.2);
+}
+
+.shapeVariant1 {
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 317px;
+}
+
+.shapeVariant2 {
+    bottom: 0;
+    left: 3rem;
+    width: 70px;
+    height: 198px;
+}
+
+.shapeVariant3 {
+    bottom: -20.5rem;
+    left: 0.5rem;
+    width: 426px;
+    height: 426px;
+    rotate: 45deg;
+}
+
+.shapeVariant4 {
+    bottom: -13.5rem;
+    left: 21rem;
+    width: 14rem;
+    height: 14rem;
+    rotate: 45deg;
+}
+
+.shapeVariant5 {
+    bottom: -3rem;
+    left: 35rem;
+    width: 32px;
+    height: 140px;
+}
+
+.shapeVariant6 {
+    bottom: -5rem;
+    left: 38rem;
+    width: 32px;
+    height: 140px;
+}
+
+.shapeVariant7 {
+    bottom: -11rem;
+    right: 32rem;
+    width: 14rem;
+    height: 14rem;
+    rotate: 45deg;
+}
+
+.shapeVariant8 {
+    bottom: 0;
+    right: 20rem;
+    width: 100px;
+    height: 140px;
+}
+
+.shapeVariant9 {
+    bottom: 0;
+    right: 16rem;
+    width: 100px;
+    height: 240px;
+}
+
+.shapeVariant10 {
+    bottom: 0;
+    right: 3rem;
+    width: 230px;
+    height: 500px;
+}
+
+.shapeVariant11 {
+    bottom: -7rem;
+    right: 1rem;
+    width: 10rem;
+    height: 10rem;
+    rotate: 45deg;
+}
+
+.shapeVariant12 {
+    bottom: 0;
+    right: 0rem;
+    width: 60px;
+    height: 340px;
+}

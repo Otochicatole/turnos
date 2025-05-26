@@ -264,7 +264,7 @@ export default function Page() {
               </TabList>
             </Box>
             <TabPanel
-              className="flex flex-col items-center justify-center  bg-[url(/casa.png)] bg-cover px-40"
+              className="flex flex-col items-center justify-center  bg-[url(/casa.png)] rounded-b-3xl bg-cover px-40"
               value="1"
             >
               <div className="p-3 w-full max-w-xl bg-black/80 backdrop-blur-sm rounded-sm shadow-md">
@@ -301,7 +301,7 @@ export default function Page() {
               </div>
             </TabPanel>
             <TabPanel
-              className="flex flex-col items-center justify-center bg-[url(/img.jpg)] bg-cover bg-center"
+              className="flex flex-col items-center justify-center bg-[url(/img.jpg)] rounded-b-3xl bg-cover bg-center"
               value="2"
             >
               <div className="p-3 w-full max-w-xl bg-black/80 backdrop-blur-sm rounded-sm shadow-md">

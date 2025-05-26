@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import { TextField, Button, Container } from '@mui/material';
+import { TextField, Button, Container, Typography } from '@mui/material';
 import { AiOutlineMail, AiOutlineWhatsApp } from 'react-icons/ai';
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -17,6 +17,8 @@ export default function ContactPage() {
         apellido: false,
         mensaje: false
     });
+
+    const [successMessage, setSuccessMessage] = useState('');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -38,13 +40,12 @@ export default function ContactPage() {
                 apellido: apellido.trim() === '',
                 mensaje: mensaje.trim() === ''
             });
-            alert('Por favor, completa todos los campos.');
             return;
         }
 
         try {
             await axios.post('/api/send', formData);
-            alert('Correo enviado con éxito');
+            setSuccessMessage('Correo enviado con éxito');
         } catch (error) {
             console.error('Error al enviar el correo:', error);
             alert('Error al enviar el correo');
@@ -61,13 +62,14 @@ export default function ContactPage() {
                 apellido: apellido.trim() === '',
                 mensaje: mensaje.trim() === ''
             });
-            alert('Por favor, completa todos los campos.');
             return;
         }
 
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${PHONE_NUMBER}&text=${encodeURIComponent(`Nombre: ${formData.nombre}\nApellido: ${formData.apellido}\nMensaje: ${formData.mensaje}`)}`;
         window.open(whatsappUrl, '_blank');
     };
+
+    const isFormComplete = formData.nombre.trim() !== '' && formData.apellido.trim() !== '' && formData.mensaje.trim() !== '';
 
     return (
         <Container style={{ marginTop: '100px' }} maxWidth="sm">
@@ -116,24 +118,37 @@ export default function ContactPage() {
                     error={errors.mensaje}
                     helperText={errors.mensaje ? 'Este campo es requerido' : ''}
                 />
-                <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<AiOutlineMail />}
-                    onClick={handleEmailSubmit}
-                    style={{ marginRight: '10px', marginTop: '20px' }}
-                >
-                    Enviar Correo
-                </Button>
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    startIcon={<AiOutlineWhatsApp />}
-                    onClick={handleWhatsAppSubmit}
-                    style={{ marginTop: '20px' }}
-                >
-                    Enviar WhatsApp
-                </Button>
+                {successMessage && (
+                    <Typography
+                        variant="body1"
+                        color="success"
+                        style={{ marginTop: '20px' }}
+                    >
+                        {successMessage}
+                    </Typography>
+                )}
+                {isFormComplete && (
+                    <>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            startIcon={<AiOutlineMail />}
+                            onClick={handleEmailSubmit}
+                            style={{ marginRight: '10px', marginTop: '20px' }}
+                        >
+                            Enviar Correo
+                        </Button>
+                        <Button
+                            variant="contained"
+                            color="secondary"
+                            startIcon={<AiOutlineWhatsApp />}
+                            onClick={handleWhatsAppSubmit}
+                            style={{ marginTop: '20px' }}
+                        >
+                            Enviar WhatsApp
+                        </Button>
+                    </>
+                )}
             </motion.div>
         </Container>
     );
